@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+    </body>
+</html>
+
+
+<!--<#!/usr/bin/env python
+# coding: utf-8
+
+# In[4]:
+
+
+from tkinter import *
+root=Tk()
+canvas = Canvas(root,bg="yellow",height=600,width=700)
+ov=canvas.create_oval(100,190,200,100,fill="pink")
+canvas.pack()
+mainloop()
+
+
+
+
+
+
+
+
+
+
+# In[3]:
+
+
+#prac1 taking input from user
+
+import tkinter
+root=tkinter.Tk()
+x1=int(input("Enter the X Co-Ordinate:"))
+y1=int(input("Enter the Y Co-Ordinate:"))
+x2=int(input("Enter the X Co-Ordinate:"))
+y2=int(input("Enter the Y Co-Ordinate:"))
+x3=int(input("Enter the X Co-Ordinate:"))
+y3=int(input("Enter the Y Co-Ordinate:"))
+x4=int(input("Enter the X Co-Ordinate:"))
+y4=int(input("Enter the Y Co-Ordinate:"))
+Dx=int(input("Enter the Dx Co-Ordinate:"))
+Dy=int(input("Enter the Dy Co-Ordinate:"))
+C=tkinter.Canvas(root,bg="blue",height="300",width="300")
+rec=C.create_polygon(x1,y1,x2,y2,x3,y3,x4,y4,fill="red")
+rec=C.create_polygon(x1+Dx,y1+Dy,x2+Dx,y2+Dy,x3+Dx,y3+Dy,x4+Dx,y4+Dy,outline="red")
+C.pack()
+mainloop()
+#for fun try 80 50 140 150 100 120 160 200 100 100
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# In[1]:
+
+
+#prac1
+from tkinter import *
+root=Tk()
+canvas = Canvas(root,bg="yellow",height=600,width=700)
+x=80
+y=50
+p=140
+q=150
+canvas.create_text(150,40,text="Oval before translation",fill="black",font=('Helvetica 15 bold'))
+#ov=canvas.create_oval(120,20,220,230,fill="pink")
+oval=canvas.create_oval(x,y,p,q,fill="green")
+tx=300
+ty=300
+canvas.create_text(300,300,text="Oval after translation",fill="black",font=('Helvetica 15 bold'))
+oval=canvas.create_oval(x+tx,y+ty,p+tx,q+ty,fill="pink")
+canvas.pack()
+mainloop()
+
+
+
+
+
+
+
+
+
+
+
+
+
+# In[2]:
+
+
+#### Practical 2:-write a python program to implement scaling operation on right angle triangle
+from tkinter import *
+root=Tk()
+x0=int(input("Enter x0:- "))
+y0=int(input("Enter y0:- "))
+x1=int(input("Enter x1:- "))
+y1=int(input("Enter y1:- "))
+x2=int(input("Enter x2:- "))
+y2=int(input("Enter y2:- "))
+C=Canvas(root,bg="gray",height=1000,width=1000)
+C.create_text(150,40,text="Triangle Before scaling",fill="black",font=('Consolas'))
+triangle1=C.create_polygon(x0,y0,x1,y1,x2,y2,fill="green")
+C.create_text(150,500,text="Triangle After scaling",fill="black",font=('Consolas'))
+sx=2
+sy=2
+triangle2=C.create_polygon(x0*sx,y0*sy,x1*sx,y1*sy,x2*sx,y2*sy,fill="blue")
+C.pack()
+mainloop()
+#LETS TAKE POINT (250,100),(150,350),(400,350)
+
+
+
+
+
+
+
+
+
+
+
+
+
+# In[3]:
+
+
+#### Practical 4:-write a python program to implement rotaion operation 
+
+import math
+from tkinter import *
+root=Tk()
+n=int(input("Enter angle"))
+a=math.cos(math.radians(n))
+b=math.sin(math.radians(n))
+x0=int(input("Enter x0:- "))
+y0=int(input("Enter y0:- "))
+x1=int(input("Enter x1:- "))
+y1=int(input("Enter y1:- "))
+x2=int(input("Enter x2:- "))
+y2=int(input("Enter y2:- "))
+
+C=Canvas(root,bg="gray",height=1000,width=1000)
+C.create_text(150,40,text="Triangle Before rotation",fill="green",font=('Consolas'))
+triangle1=C.create_polygon(x0,y0,x1,y1,x2,y2,fill="green")
+x11=abs(x0*a-y0*b)
+y11=abs(x0*b+y0*a)
+x12=abs(x1*a-y1*b)
+y12=abs(x1*b+y1*a)
+x13=abs(x2*a-y2*b)
+y13=abs(x2*b+y2*a)
+C.create_text(150,200,text="Triangle After rotation",fill="blue",font=('Consolas'))
+triangle2=C.create_polygon(x11,y11,x12,y12,x13,y13,fill="blue")
+
+C.pack()
+mainloop()
+#250 100 150 350 250 350 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# In[1]:
+
+
+# 
+
+import math
+from tkinter import *
+root=Tk()
+
+
+x0=int(input("Enter x0:- "))
+y0=int(input("Enter y0:- "))
+x1=int(input("Enter x1:- "))
+y1=int(input("Enter y1:- "))
+x2=int(input("Enter x2:- "))
+y2=int(input("Enter y2:- "))
+
+angle=int(input("Enter angle :"))
+a=math.cos(math.radians(angle))
+b=math.sin(math.radians(angle))
+
+x11=(x0*math.cos(angle)-y0*math.sin(angle))*-1
+y11=(x0*math.cos(angle)+y0*math.sin(angle))
+x12=(x1*math.cos(angle)-y1*math.sin(angle))*-1
+y12=(x1*math.cos(angle)+y1*math.sin(angle))
+x13=(x2*math.cos(angle)-y2*math.sin(angle))*-1
+y13=(x2*math.cos(angle)+y2*math.sin(angle))
+
+C=Canvas(root,bg="gray",height=1000,width=1000)
+C.create_text(150,40,text="Triangle Before rotation",fill="green",font=('Consolas'))
+triangle1=C.create_polygon(x0,y0,x1,y1,x2,y2,fill="green")
+C.create_text(150,200,text="Triangle After rotation",fill="blue",font=('Consolas'))
+triangle2=C.create_polygon(x11,y11,x12,y12,x13,y13,fill="blue")
+
+C.pack()
+mainloop()
+#250 100 150 350 250 350 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# In[9]:
+
+
+############practical 3 ###### reflection
+from tkinter import*
+import math
+root = Tk()
+C = Canvas(root,bg="yellow",height=1000,width=1200)
+x0 = int(input("Enter x0"))
+y0 = int(input("Enter y0"))
+x1 = int(input("Enter x1"))
+y1 = int(input("Enter y1"))
+x2 = int(input("Enter x2"))
+y2 = int(input("Enter y2"))
+triangle=C.create_polygon(x0,y0,x1,y1,x2,y2,fill="black")
+a=200
+y10=-y0+(2*a)
+y11=-y1+(2*a)
+y12=-y2+(2*a)
+triangle=C.create_polygon(x0,y10,x1,y11,x2,y12,fill="green")
+C.pack()
+mainloop()
+#250 150 150 300 200 300
+
+
+
+
+
+
+
+
+
+
+
+
+# In[ ]:
+
+
+####### Practical 5:-write a python program to implement shearing operationon right angle triangle
+import math
+from tkinter import *
+root=Tk()
+b=int(input("Enter angle of shearing:- "))
+x0=int(input("Enter x0:- "))
+y0=int(input("Enter y0:- "))
+x1=int(input("Enter x1:- "))
+y1=int(input("Enter y1:- "))
+x2=int(input("Enter x2:- "))
+y2=int(input("Enter y2:- "))
+x3=int(input("Enter x3:- "))
+y3=int(input("Enter y3:- "))
+a=math.tan(math.radians(b))
+C=Canvas(root,bg="gray",height=1000,width=1000)
+C.create_text(120,100,text="Before Shearing",fill="black",font=('Consolas'))
+triangle1=C.create_polygon(x0,y0,x1,y1,x2,y2,x3,y3,fill="green")
+xsh1=x0+y0*a
+xsh2=x3+y3*a
+triangle2=C.create_polygon(xsh1,y0,x1,y1,x2,y2,xsh2,y3,fill="blue")
+C.create_text(570,300,text="After Shearing",fill="black",font=('Consolas'))
+
+C.pack()
+mainloop()
+
+
+#angle:-45
+#200 200 200 400 400 400 400 200
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# In[16]:
+
+
+#shearing
+from tkinter import*
+import math
+root = Tk()
+C = Canvas(root,bg="yellow",height=1000,width=1200)
+# Taking initial coordinates from user
+x1, y1 = map(int, input("Enter initial coordinates of rectangle (x1, y1): ").split())
+#x2, y2 = map(int, input("Enter initial coordinates of rectangle (x2, y2): ").split())
+#x3, y3 = map(int, input("Enter initial coordinates of rectangle (x3, y3): ").split())
+x4, y4 = map(int, input("Enter initial coordinates of rectangle (x4, y4): ").split())
+
+#CREATING RECTANGLE
+T1=C.create_rectangle(x1, y1,x4, y4, fill="red")
+
+# Define shearing parameter along x-axis
+sh_x = float(input("Enter shearing parameter along x-axis: "))
+
+# Create shearing transformation matrix
+shear_matrix = [[1, sh_x, 0], [0, 1, 0], [0, 0, 1]]
+
+# Multiply transformation matrix with initial coordinates
+new_x1 = x1 + sh_x * y1
+new_y1 = y1
+#new_x2 = x2 + sh_x * y2
+#new_y2 = y2
+#new_x3 = x3 + sh_x * y3
+#new_y3 = y3
+new_x4 = x4 + sh_x * y4
+new_y4 = y4
+T2=C.create_rectangle(new_x1, new_y1,new_x4, new_y4, fill="green")
+# Print new coordinates after shearing
+#print(f"New coordinates after shearing: ({new_x1}, {new_y1}), ({new_x2}, {new_y2}), ({new_x3}, {new_y3}), ({new_x4}, {new_y4})")
+C.pack()
+mainloop()
+#130 200 input
+#250 300 input
+
+
+
+
+
+
+
+
+
+
+
+# In[4]:
+
+
+#practical 6
+from tkinter import*
+import math
+root = Tk()
+C = Canvas(root,bg="white",height=1000,width=1500)
+triangle1=C.create_polygon(150,300,300,200,300,400,fill="red")
+T1=C.create_rectangle(300, 250,500, 350, fill="red")
+
+#parllel to y axis
+a=600
+C.create_text(600,300,text="parallel to y axis",fill="black",font=('Helvetica 15 bold'))
+triangle2=C.create_polygon(-150+(2*a),300,-300+(2*a),200,-300+(2*a),400,fill="green")
+T2=C.create_rectangle(-300+(2*a), 250,-500+(2*a), 350, fill="green")
+
+#scaling
+sx=2
+sy=1.9
+C.create_text(100,600,text="scaling of Diagram",fill="black",font=('Helvetica 15 bold'))
+triangle3=C.create_polygon(150*sx,300*sy,300*sx,200*sy,300*sx,400*sy,fill="red")
+T3=C.create_rectangle(300*sx, 250*sy,500*sx, 350*sy, fill="red")
+
+#translation
+
+tx=900
+ty=300
+C.create_text(1200,450,text="after translation",fill="black",font=('Helvetica 15 bold'))
+
+triangle1=C.create_polygon(150+tx,300+ty,300+tx,200+ty,300+tx,400+ty,fill="cyan")
+T1=C.create_rectangle(300+tx, 250+ty,500+tx, 350+ty, fill="cyan")
+C.pack()
+mainloop()
+
+
+
+
+
+
+
+
+
+
+
+
+# In[13]:
+
+
+# Import matplotlib.pyplot for plotting
+import matplotlib.pyplot as plt
+
+# Define a function to perform shearing on a rectangle
+def shear_rectangle(x1, y1, x2, y2, sh_x):
+  # Calculate the new coordinates after shearing
+  x1_new = x1 + sh_x * y1
+  y1_new = y1
+  x2_new = x2 + sh_x * y2
+  y2_new = y2
+  # Return the new coordinates as a list of tuples
+  return [(x1_new, y1_new), (x2_new, y1_new), (x2_new, y2_new), (x1_new, y2_new)]
+
+# Ask the user to enter the initial coordinates of the rectangle
+print("Enter the initial coordinates of the rectangle:")
+x1 = float(input("x1: "))
+y1 = float(input("y1: "))
+x2 = float(input("x2: "))
+y2 = float(input("y2: "))
+
+# Ask the user to enter the shearing factor along the x-axis
+sh_x = float(input("Enter the shearing factor along the x-axis: "))
+
+# Perform shearing on the rectangle and get the new coordinates
+new_coords = shear_rectangle(x1, y1, x2, y2, sh_x)
+
+# Plot the original and sheared rectangles using matplotlib.pyplot
+plt.figure()
+plt.title("Shearing on a rectangle")
+plt.xlabel("x")
+plt.ylabel("y")
+# Plot the original rectangle as a blue polygon
+plt.fill([x1, x2, x2, x1], [y1, y1, y2, y2], color="blue", label="Original")
+# Plot the sheared rectangle as a red polygon
+plt.fill(*zip(*new_coords), color="red", label="Sheared")
+# Add a legend to show the labels
+plt.legend()
+# Show the plot
+plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# In[12]:
+
+
+
+
+
+# In[1]:
+
+
+#snake Game Pycharm
+# importing libraries
+import pygame
+import time
+import random
+
+snake_speed = 10
+
+# Window size
+window_x = 720
+window_y = 480
+
+# defining colors
+black = pygame.Color(0, 0, 0)
+white = pygame.Color(255, 255, 255)
+red = pygame.Color(255, 0, 0)
+green = pygame.Color(0, 255, 0)
+blue = pygame.Color(0, 0, 255)
+
+# Initialising pygame
+pygame.init()
+
+# Initialise game window
+pygame.display.set_caption('Snakes')
+
+game_window = pygame.display.set_mode((window_x, window_y))
+#background image
+bg=pygame.image.load("snake-bg.jpg")
+
+# FPS (frames per second) controller
+fps = pygame.time.Clock()
+
+# defining snake default position
+snake_position = [100, 50]
+
+# defining first 4 blocks of snake body
+snake_body = [[100, 50],
+              [90, 50],
+              [80, 50],
+              [70, 50]
+              ]
+# fruit position
+fruit_position = [random.randrange(1, (window_x // 10)) * 10,
+                  random.randrange(1, (window_y // 10)) * 10]
+
+fruit_spawn = True
+
+# setting default snake direction towards
+# right
+direction = 'RIGHT'
+change_to = direction
+
+# initial score
+score = 0
+
+
+# displaying Score function
+def show_score(choice, color, font, size):
+    # creating font object score_font
+    score_font = pygame.font.SysFont(font, size)
+
+    # create the display surface object
+    # score_surface
+    score_surface = score_font.render('Score : ' + str(score), True, color)
+
+    # create a rectangular object for the text
+    # surface object
+    score_rect = score_surface.get_rect()
+
+    # displaying text
+    game_window.blit(score_surface, score_rect)
+
+
+# game over function
+def game_over():
+    # creating font object my_font
+    my_font = pygame.font.SysFont('times new roman', 50)
+
+    # creating a text surface on which text
+    # will be drawn
+    game_over_surface = my_font.render(
+        'Your Score is : ' + str(score), True, red)
+
+    # create a rectangular object for the text
+    # surface object
+    game_over_rect = game_over_surface.get_rect()
+
+    # setting position of the text
+    game_over_rect.midtop = (window_x / 2, window_y / 4)
+
+    # blit will draw the text on screen
+    game_window.blit(game_over_surface, game_over_rect)
+    pygame.display.flip()
+
+    # after 2 seconds we will quit the program
+    time.sleep(2)
+
+    # deactivating pygame library
+    pygame.quit()
+
+    # quit the program
+    quit()
+
+
+# Main Function
+while True:
+
+   # game_window.blit(bg, (0, 0))
+
+    # handling key events
+    for event in pygame.event.get():
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_UP:
+
+                change_to = 'UP'
+            if event.key == pygame.K_DOWN:
+                change_to = 'DOWN'
+            if event.key == pygame.K_LEFT:
+                change_to= 'LEFT'
+            if event.key == pygame.K_RIGHT:
+                change_to = 'RIGHT'
+
+    # If two keys pressed simultaneously
+    # we don't want snake to move into two
+    # directions simultaneously
+    if change_to == 'UP' and direction != 'DOWN':
+        direction = 'UP'
+    if change_to == 'DOWN' and direction != 'UP':
+        direction = 'DOWN'
+    if change_to == 'LEFT' and direction != 'RIGHT':
+        direction = 'LEFT'
+    if change_to == 'RIGHT' and direction != 'LEFT':
+        direction = 'RIGHT'
+
+    # Moving the snake
+    if direction == 'UP':
+        snake_position[1] -= 10
+    if direction == 'DOWN':
+        snake_position[1] += 10
+    if direction == 'LEFT':
+        snake_position[0] -= 10
+    if direction == 'RIGHT':
+        snake_position[0] += 10
+
+    # Snake body growing mechanism
+    # if fruits and snakes collide then scores
+    # will be incremented by 10
+    snake_body.insert(0, list(snake_position))
+    if snake_position[0] == fruit_position[0] and snake_position[1] == fruit_position[1]:
+        score += 10
+        fruit_spawn = False
+    else:
+        snake_body.pop()
+
+    if not fruit_spawn:
+        fruit_position = [random.randrange(1, (window_x // 10)) * 10,
+                          random.randrange(1, (window_y // 10)) * 10]
+
+    fruit_spawn = True
+    game_window.fill(black)
+
+    for pos in snake_body:
+        pygame.draw.rect(game_window, green,
+                         pygame.Rect(pos[0], pos[1], 10, 10))
+    pygame.draw.rect(game_window, white, pygame.Rect(
+        fruit_position[0], fruit_position[1], 10, 10))
+
+    # Game Over conditions
+    if snake_position[0] < 0 or snake_position[0] > window_x - 10:
+        game_over()
+    if snake_position[1] < 0 or snake_position[1] > window_y - 10:
+        game_over()
+
+    # Touching the snake body
+    for block in snake_body[1:]:
+        if snake_position[0] == block[0] and snake_position[1] == block[1]:
+            game_over()
+
+    # displaying score continuously
+    show_score(1, white, 'times new roman', 20)
+
+    # Refresh game screen
+    pygame.display.update()
+
+    # Frame Per Second /Refresh Rate
+    fps.tick(snake_speed)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# In[ ]:
+
+
+#SpaceInvader Game Pycharm
+import pygame
+import pygame as pygame
+import random
+import math
+from pygame import  mixer
+# initializing pygame module
+pygame.init()
+
+#Creating Screen
+screen = pygame.display.set_mode((800, 600))#(width,height)
+
+#add icon to the gamimng window
+icon=pygame.image.load("ufo.png")
+pygame.display.set_icon(icon)
+
+#add title to the gamimng window
+pygame.display.set_caption("Space Invader")
+
+#background image
+bg=pygame.image.load("background (1).png")
+
+#background sound
+mixer.music.load("background.wav")
+mixer.music.play(-1)
+
+#player
+playerImg=pygame.image.load("arcade.png")
+playerX=370
+playerY=480
+playerX_change=0
+
+#enemy
+enemyImg = []
+enemyX = []
+enemyY = []
+enemyX_change=[]
+enemyY_change=[]
+no_of_enemies=6
+
+for i in range(no_of_enemies):
+    enemyImg.append(pygame.image.load("enemy.png"))
+    enemyX.append(random.randint(0,735))
+    enemyY.append(random.randint(50,150))
+    enemyX_change.append(3)
+    enemyY_change.append(40)
+
+#bullet
+#
+# you can't see bullet omn screen in ready mode in fire mode you can see on screen
+
+bulletImg=pygame.image.load("bullet2.png")
+bulletX=0
+bulletY=480
+bulletX_change=0
+bulletY_change=10
+bullet_state="ready"
+score_value=0
+
+#for add font (for score purpose)
+font1=pygame.font.Font("freesansbold.ttf",33)#33 is the size of font here
+textX=10# cordinates of score
+textY=10
+
+#"GAME OVER TEXT FONT "
+font2=pygame.font.Font("freesansbold.ttf",50)
+
+def game_over_text():
+   over_text=font2.render("GAME OVER :",True,(150,200,200))
+   screen.blit(over_text,(200,250))
+def show_score(x,y):
+    score=font1.render("score :"+str(score_value),True,(100,20,200))
+    screen.blit(score,(x,y))
+def player(x,y):
+    screen.blit(playerImg,(x,y))
+
+def enemy(x,y,i):
+    screen.blit(enemyImg[i],(x,y))
+
+def fire_bullet(x,y):
+    global bullet_state
+    bullet_state="fire"
+    screen.blit(bulletImg,(x+16,y+16))
+
+def isCollision(enemyX,enemyY,bulletX,bulletY):
+    distance=math.sqrt((math.pow(enemyX-bulletX,2))+(math.pow(enemyY-bulletY,2)))
+    if distance < 27:
+        return  True
+    else:
+        return False
+
+
+
+#Stop Window
+running = True
+while running:
+    #for adding color
+    screen.fill((0, 255, 255))
+    screen.blit(bg,(0,0))
+
+
+    #playerX+=0.1 #to see how actually img is moved
+    #playerY -= 0.1
+
+    #for stop window after click on closed
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_LEFT:
+                playerX_change = -5
+            if event.key == pygame.K_RIGHT:
+                playerX_change = 5
+            if event.key == pygame.K_SPACE:
+                if bullet_state is "ready":
+                    bullet_sound = mixer.Sound("laser.wav")
+                    bullet_sound.play()
+                    bulletX = playerX
+                    fire_bullet(bulletX, bulletY)
+        if event.type == pygame.KEYUP:
+            if event.key == pygame.K_RIGHT or event.key == pygame.K_LEFT:
+                playerX_change = 0
+
+    playerX+=playerX_change
+    if playerX<=0:
+        playerX=00
+    elif playerX>=736:
+        playerX=736
+
+#enemies  movement
+
+    for i in range(no_of_enemies):
+        #GAME OVER
+        if enemyY[i]>400:
+            for j in range (no_of_enemies):
+                enemyY[i]=2000
+            game_over_text()
+            break
+        enemyX[i]+=enemyX_change[i]
+        if enemyX[i] <=0:
+            enemyX_change[i]=3
+        elif enemyX[i] >=736:
+            enemyX_change[i]=-3
+            enemyY[i]+=enemyY_change[i]
+
+        # collision of bullet and enemy
+
+        collision = isCollision(enemyX[i], enemyY[i], bulletX, bulletY)
+        if collision:
+            explosion_sound = mixer.Sound("explosion.wav")
+            explosion_sound.play()
+            bulletY = 480
+            bullet_state = "ready"
+            score_value += 1
+
+            enemyX[i] = random.randint(0, 735)
+            enemyY[i] = random.randint(50, 150)
+        enemy(enemyX[i], enemyY[i],i)
+
+# bullet movement
+
+    if bulletY <= 0:
+        bulletY=480
+        bullet_state="ready"
+    if bullet_state is "fire":
+        #fire_bullet(bulletX,bulletY)
+        fire_bullet(bulletX+28, bulletY+28)
+        fire_bullet(bulletX - 28, bulletY - 28)
+        bulletY-=bulletY_change
+
+
+
+
+
+        #call in player and enemy and then oit display on screen
+    player(playerX,playerY)
+    show_score(textX, textY)
+
+
+
+
+    #below line is very imp for display content
+
+    pygame.display.update()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# In[ ]:
+
+
+#2D Ufo Unity         ||
+______________________
+
+(//CameraController.cs:-)
+    using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CameraContoller : MonoBehaviour
+{
+    public GameObject player;
+    private Vector3 offset;
+    // Start is called before the first frame update
+    void Start()
+    {
+        offset=transform.position - player.transform.position;
+    }
+
+    // Update is called once per frame
+    void LateUpdate()
+    {
+        transform.position=player.transform.position+offset;
+    }
+}
+
+*******************************************************************************************
+(///Rotator.cs:-)
+    using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Rotator : MonoBehaviour
+{
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        transform.Rotate(new Vector3(0,0,45)*Time.deltaTime);
+    }
+}
+
+
+
+
+**************************************************************************************************
+(///PlayerController:-)
+    using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class PlayerController : MonoBehaviour
+{
+    public Text winText;
+   
+public Text countText; 
+public int count=0;
+    private Rigidbody2D rbd;
+    public float speed;
+    // Start is called before the first frame update
+    void Start()
+    {
+        rbd=GetComponent<Rigidbody2D>();
+    }
+
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+        float moveHorizontal=Input.GetAxis("Horizontal");
+        float moveVertical=Input.GetAxis("Vertical");
+        Vector2 movement=new Vector2(moveHorizontal,moveVertical);
+        rbd.AddForce(movement*speed);
+    }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.tag=="PickUp")
+        {
+            other.gameObject.SetActive(false);
+            count++;
+            SetCountText();
+        }
+    }
+    void SetCountText()
+    {
+        countText.text="count"+count.ToString();
+        if(count==7)
+        {
+            winText.text="You Win!";
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# In[ ]:
+
+
+#3DRollBoll Unity:-             *****
+*************************************
+(///CameraController.cs:-)
+    using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CameraController : MonoBehaviour
+{
+    private Vector3 offset;
+    public GameObject player;
+    // Start is called before the first frame update
+    void Start()
+    {
+        offset = transform.position - player.transform.position;
+    }
+
+    // Update is called once per frame
+    void LateUpdate()
+    {
+        transform.position = player.transform.position + offset;
+    }
+}
+************************************************************************************************
+(///Rotator.cs:-)
+    using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Rotator : MonoBehaviour
+{
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        transform.Rotate(new Vector3(13,30,45)*Time.deltaTime);
+    }
+}
+
+******************-*******************************************************************************************-
+(//PlayerController.cs:-)
+    using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class PlayerController : MonoBehaviour
+{
+    public Text winText;
+      public Text countText;
+        public int count;
+    private Rigidbody rb;
+    public float speed;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        count=0;
+        winText.text="";
+        rb = GetComponent<Rigidbody>();
+        SetCountText();
+    }
+
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveVertical = Input.GetAxis("Vertical");
+        Vector3 movement = new Vector3(moveHorizontal,0.0f,moveVertical);
+        rb.AddForce(movement*speed);
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("PickUp"))
+        {
+            other.gameObject.SetActive(false);
+            count=count+1;
+            SetCountText();
+        }
+
+    }
+    void SetCountText()
+    {
+        countText.text="Score:"+count.ToString();
+        if(count>=7)
+        {
+            winText.text="you Win!!";
+        }
+    }
+}-->
+
